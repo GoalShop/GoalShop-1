@@ -28,7 +28,10 @@
 						<td><a th:href="@{|/order/detail/${order.order_id}|}"
 							class="btn btn-info"> <b class="fa fa-search"></b>
 						
-						</a></td>
+						</a>
+						<a th:if="*{order.Status}==0" th:href="@{|/order/delete/${order.order_id}|}"
+							class="btn btn-danger"> <b class="fa fa-trash"></b></a>
+						</td>
 					</tr>
 				</tbody>
 			</table>
