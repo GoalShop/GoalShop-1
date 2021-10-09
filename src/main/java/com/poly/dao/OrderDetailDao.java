@@ -13,4 +13,5 @@ import com.poly.entity.OrderDetail;
 public interface OrderDetailDao extends JpaRepository<OrderDetail, Integer>{
 	@Query("SELECT o FROM OrderDetail o WHERE o.order.Order_id = ?1")
 	List<OrderDetail> findByOrderID(Integer orderid);
+	
 }

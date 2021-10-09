@@ -9,12 +9,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.poly.dao.OrderDao;
+import com.poly.service.OrderDetailService;
 import com.poly.service.OrderService;
 
 @Controller
 public class OrderController {
 	@Autowired
 	OrderService orderService;
+	@Autowired
+	OrderDetailService orderDetailService;
 	@Autowired
 	OrderDao odao;
 	@RequestMapping("/order/checkout")

@@ -1,0 +1,56 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Order List</div>
+    <table class="table table-condensed">
+        <thead class="bg-success" style="font-variant: small-caps;">
+            <tr>
+                 <th>Order No.</th>
+                 <th>Username</th>
+                 <th>Oder Date</th>
+                 <th>Shopping Address</th>
+                 <th>Phone</th>
+                 <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="ord in pager.order">
+                <td>{{ord.order_id}}</td>
+                <td>{{ord.account.username}}</td>
+                <td>{{ord.createDate | date : 'dd-MM-yyyy'}}</td>
+                <td>{{ord.address}}</td>
+                <td>{{ord.phone}}</td>  
+<!--                 <td style="color: #B22222;font-weight: bolder;">{{ord.status==0?'Đang xử lý' : -->
+<!--                 		ord.status==1?'Đang giao hàng': -->
+<!--                 		ord.status==2?'Đã hoàn thành' :'Đã huỷ'}}</td> -->
+				<td>
+					<b style="color: #00008B;">{{ord.status==0?'Đang xử lý' :''}}</b>
+					<b style="color: #FFD700;">{{ord.status==1?'Đang giao hàng' :''}}</b>
+					<b style="color: #2E8B57;">{{ord.status==2?'Đã hoàn thành' :''}}</b>
+					<b style="color: #DC143C;">{{ord.status==3?'Đã huỷ' :''}}</b>
+						</td>
+                <td ></td>
+                <td>
+                    <div class="btn-group btn-group-xs">
+                        <button ng-click="search(ord)" 
+                         class="btn btn-warning glyphicon glyphicon-search"></button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <div class="panel-footer text-center">
+        <button ng-click="pager.first()" class="btn btn-danger">
+            <b class="glyphicon glyphicon-hand-up"></b>
+        </button>
+        <button ng-click="pager.prev()" class="btn btn-primary">
+            <b class="glyphicon glyphicon-hand-left"></b>
+        </button>
+        <button class="btn btn-success">{{pager.page + 1}} of {{pager.count}}</button>
+        <button ng-click="pager.next()" class="btn btn-primary">
+            <b class="glyphicon glyphicon-hand-right"></b>
+        </button>
+        <button ng-click="pager.last()" class="btn btn-danger">
+            <b class="glyphicon glyphicon-hand-down"></b>
+        </button>
+    </div>
+</div>

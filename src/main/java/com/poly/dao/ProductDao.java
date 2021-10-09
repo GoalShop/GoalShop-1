@@ -41,6 +41,12 @@ public interface ProductDao extends JpaRepository<Product, Integer>{
 				+ " GROUP BY o.category.Category_id ,o.category.name"
 				+ " ORDER BY sum(o.Unit_price) DESC")
 		List<ReportCategory> getReportCategory();
+		@Query("SELECT p FROM Product p WHERE p.Distcount > 0")
+		List<Product> findByAllDis();
+		@Query("SELECT p FROM Product p WHERE p.Special = true")
+		List<Product> findByAllSpe();
+		@Query(value = "SELECT p FROM Product p WHERE p.Lastest = true")
+		List<Product> findByAllLat();
 
 	
 }

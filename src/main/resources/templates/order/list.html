@@ -24,7 +24,12 @@
 						<td>[[${order.order_id}]]</td>
 						<td>[[${order.createDate}]]</td>
 						<td>[[${order.address}]]</td>
-						<td>[[${order.status}]]</td>
+						<td>
+						<b style="color: #00008B;">[[${order.status==0?'Đang xử lý' :''}]]</b>
+						<b style="color: #FFD700;">[[${order.status==1?'Đang giao hàng' :''}]]</b>
+						<b style="color: #2E8B57;">[[${order.status==2?'Đã hoàn thành' :''}]]</b>
+						<b style="color: #DC143C;">[[${order.status==3?'Đã huỷ' :''}]]</b>
+						</td>
 						<td><a th:href="@{|/order/detail/${order.order_id}|}"
 							class="btn btn-info"> <b class="fa fa-search"></b>
 						

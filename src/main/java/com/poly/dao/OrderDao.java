@@ -15,7 +15,7 @@ public interface OrderDao extends JpaRepository<Order, Integer>{
 	@Query("SELECT o FROM Order o WHERE o.account.Username=?1 order by o.id desc ")
 	List<Order> findByUsername(String username);
 	
-	@Query(value="Select * from Orders order by Orders.id desc",nativeQuery = true)
+	@Query(value="Select * from Orders order by Orders.Order_id desc",nativeQuery = true)
 	List<Order> findByAllDesc();
 
 }

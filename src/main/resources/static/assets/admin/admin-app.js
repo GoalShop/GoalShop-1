@@ -18,6 +18,10 @@ app.config(function($routeProvider) {
             templateUrl: "/assets/admin/account/index.html",
             controller: "account-ctrl"
         })
+        .when("/order", {
+            templateUrl: "/assets/admin/order/index.html",
+            controller: "order-ctrl"
+        })
         .when("/char", {
             templateUrl: "/assets/admin/char/index.html",
 

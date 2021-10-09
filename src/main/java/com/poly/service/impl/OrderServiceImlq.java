@@ -55,6 +55,11 @@ public class OrderServiceImlq implements OrderService {
 		dao.deleteById(id);
 		
 	}
+	@Override
+	public Order update(Order order) {
+		// TODO Auto-generated method stub
+		return dao.save(order);
+	}
 	
 
 	

@@ -1,0 +1,82 @@
+<div class="panel panel-default">
+        <div >
+           <div class="panel panel-primary">
+                <div class="panel-heading">ORDER INFORMATION</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-sm-4">
+                            <div>Order Number</div>
+                            <input ng-model="form.order_id" class="form-control" readonly>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <div>Purchaser:</div>
+                            <input ng-model="form.account.username" class="form-control" readonly>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <div>Email:</div>
+                            <input ng-model="form.account.email" class="form-control" readonly>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <div>Phone:</div>
+                            <input ng-model="form.phone" class="form-control" readonly>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <div>Purchase Date:</div>
+                            <input ng-model="form.createDate | date: 'dd-MM-yyyy'" class="form-control" readonly>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <div>Status:</div>
+                            <select style="color:#FF4500;font-weight: bolder;"  ng-model="form.status">
+							<option ng-value='0' value='0' class="form-group" style="color: #00008B;">Đang xử lý</option>
+							<option ng-value='1' value='1' class="form-group" style="color: #FFD700;" >Đang giao hàng</option>
+							<option  ng-value='2' class="form-group"  style="color: #2E8B57;">Đã hoàn thành</option>
+							<option  ng-value='3' class="form-group"  style="color: #DC143C;" >Đã huỷ</option>
+						</select>                  
+					</div>
+                    <div class="row">
+                        <div class="form-group col-sm-12 text-center">
+                            <div>Shipping Address:</div>
+                            <textarea ng-model="form.address" class="form-control" readonly></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer text-center">
+			        
+			        <button ng-click="update()" class="btn btn-success">
+						<b class="glyphicon glyphicon-save"></b>Update
+					</button>
+			        
+			    </div>
+           </div>
+
+           <div class="panel panel-primary">
+                <div class="panel-heading">ORDER LINES</div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                        	<th>Order Detail Id</th>
+                            <th>Product Id</th>
+                            <th>Name</th>
+                            <th>Image</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                          <tr ng-repeat="detail in odt">
+                          	<td>{{detail.orderdetail_id}}</td>
+                            <td>{{detail.product.product_id}}</td>
+                             <td>{{detail.product.name}}</td>
+                            <td><img  ng-src="/assets/images/{{detail.product.image}}" 
+                            style="width: 100px; height: 100px;"></td>
+                            <td>{{detail.price | number : 2 }}</td>
+                            <td>{{detail.quantity}}</td>
+                            <td>{{detail.price * detail.quantity  | number : 2 }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+           </div>
+        </div>
+    </div>
+</div>

@@ -17,4 +17,6 @@ public interface OrderService {
 	List<Order> findByAllDesc();
 
 	void deleteById(Integer id);
+
+	Order update(Order order);
 }
