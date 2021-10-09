@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.poly.dao.OrderDao;
+import com.poly.dao.OrderDetailDao;
 import com.poly.service.OrderDetailService;
 import com.poly.service.OrderService;
 
@@ -20,6 +21,8 @@ public class OrderController {
 	OrderDetailService orderDetailService;
 	@Autowired
 	OrderDao odao;
+	@Autowired
+	OrderDetailDao orderDetailDao;
 	@RequestMapping("/order/checkout")
 	public String checkout() {
 		return "order/checkout";
@@ -39,6 +42,7 @@ public class OrderController {
 	
 	@RequestMapping("/order/delete/{id}")
 	public String delete(@PathVariable("id") Integer id) {
+		orderDetailDao.deleteOrderId(id);
 		orderService.deleteById(id);
 		return "redirect:/order/list";
 	}

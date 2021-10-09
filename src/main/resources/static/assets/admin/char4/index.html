@@ -1,11 +1,13 @@
 <div class="text-center">
-	<h1>Thống kê chi tiết từng sản phẩm bán ra.</h1>
+	<h2>Thống kê các khách hàng thân thiết</h2>
 	<div id="char2"></div>
-	<div id="piechart"></div>
+	<div id="char3"></div>
+	
 </div>
 <script>
+
 	$.ajax({
-		url : "/getDatareport",
+		url : "/rest/report1",
 		success : function(result) {
 			var seri = [];
 
@@ -17,7 +19,8 @@
 			console.log(result);
 			for (var i = 0; i < result.length; i++) {
 				var name = {};
-				name = result[i].name;
+				name = result[i].group;
+				
 				name_product.push(name);
 			}
 			for (var i = 0; i < result.length; i++) {
@@ -33,13 +36,13 @@
 
 			for (var i = 0; i < result.length; i++) {
 				var object = {};
-				object.name = result[i].name;
+				object.name = result[i].group;
 				object.y = result[i].sum;
 				data.push(object);
 			}
 
 			var seriObject = {
-				name : 'Gia',
+				name : 'Danh thu',
 				colorByPoint : true,
 				data : data,
 				showInLegend : true
@@ -61,24 +64,24 @@
 			},
 
 			title : {
-				text : 'Danh thu theo từng sản phẩm'
+				text : 'Thống kê sản phẩm khác hàng mua '
 			},
 			xAxis : {
 				categories : name_product,
 				title : {
-					text : 'Sản Phẩm'
+					text : ' Người mua '
 				}
 			},
 			yAxis : [ {
 				className : 'highcharts-color-0',
 				title : {
-					text : 'Giá $'
+					text : 'Danh thu $'
 				}
 			}, {
 				className : 'highcharts-color-1',
 				opposite : true,
 				title : {
-					text : 'Số lượng '
+					text : 'Số lượng   '
 				}
 			} ],
 
@@ -89,36 +92,17 @@
 			},
 
 			series : [ {
-				name : 'Tổng giá',
-				data : datacolumn1
+				name : 'Danh thu',
+				data :datacolumn1
 			}, {
-				name : 'Số lượng bán ra ',
+				name : 'số lượng ',
 				data : datacolumn2,
 				yAxis : 1
 			} ]
 
 		});
 	}
-
-	function drawPieChart(seri) {
-		Highcharts
-				.chart(
-						'piechart',
-						{
-							chart : {
-								type : 'pie',
-								styledMode : true
-							},
-
-							title : {
-								text : 'Biểu đồ tròn'
-							},
-							tooltip : {
-								pointFormat : '<tr><td style="color:{series.color};padding:0">{series.name}: </td>'
-										+ '<td style="padding:0"><b>{point.y:.1f} $</b>||<b>{point.percentage:.1f}%</b></td></tr>',
-							},
-							series : seri
-						});
-	}
+	
+	
 </script>
 

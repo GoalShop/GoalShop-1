@@ -30,7 +30,15 @@ app.config(function($routeProvider) {
             templateUrl: "/assets/admin/char2/index.html",
 
         })
+         .when("/char3", {
+            templateUrl: "/assets/admin/char3/index.html",
+
+        })
+         .when("/char4", {
+            templateUrl: "/assets/admin/char4/index.html",
+
+        })
         .otherwise({
-            template: "<h1 class='text-center'>Ninh van phuoc</h1>"
+            template: "<h1 class='text-center'>GoalShop</h1>"
         });
 })

@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+<title>GoalShop</title>
 <link rel="stylesheet" type="text/css"
 	href="/assets/css/font-awesome.min.css" />
 <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css" />
@@ -20,11 +20,12 @@
 	href="/assets/images/apple-touch-icon-72x72.png">
 <link rel="apple-touch-icon" sizes="114x114"
 	href="/assets/images/apple-touch-icon-114x114.png">
-	
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>
 
-<body ng-app="shopping-cart-app" ng-controller="shopping-cart-ctrl" >
+<body ng-app="shopping-cart-app" ng-controller="shopping-cart-ctrl">
 	<div class="wrapper">
 		<header id="header">
 			<div class="header-top">
@@ -37,33 +38,69 @@
 		</header>
 		<div class="container">
 			<div class="row ">
-			<div id="column-left" class="col-sm-4 col-lg-3 ">
-				<div th:replace="/layout/_category.html"></div>
+				<div id="column-left" class="col-sm-4 col-lg-3 ">
+					<div th:replace="/layout/_category.html"></div>
 				</div>
-				 <div class="col-sm-8 col-lg-9 mtb_20">
-				<div th:replace="${main}"></div>
+				<div class="col-sm-8 col-lg-9 mtb_20">
+					<div th:replace="${main}"></div>
 				</div>
 				<div id="brand_carouse" class="ptb_30 text-center">
-				<div th:replace="/layout/_banner.html"></div>
+					<div th:replace="/layout/_banner.html"></div>
 				</div>
 			</div>
-			
+
 		</div>
-	
-			
+		<div id="fb-root"></div>
+		<script async defer crossorigin="anonymous"
+			src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v12.0&appId=1759690680890768&autoLogAppEvents=1"
+			nonce="xfm4qFPd"></script>
+
 		<div class="footer pt_60">
-		<div th:replace="/layout/_footer.html"></div>
+			<div th:replace="/layout/_footer.html"></div>
 		</div>
 	</div>
+	<script>
+
+              let __protocol = document.location.protocol;
+              let __baseUrl = __protocol + '//livechat.fpt.ai/v35/src';
+
+              let prefixNameLiveChat = 'GoalShop';
+              let objPreDefineLiveChat = {
+                      appCode: 'cf94e1c1cee13473872a7422c7cd7ef2',
+                      themes: '',
+                      appName: prefixNameLiveChat ? prefixNameLiveChat : 'Live support',
+                      thumb: '',
+                      icon_bot: ''
+                  },
+                  appCodeHash = window.location.hash.substr(1);
+              if (appCodeHash.length == 32) {
+                  objPreDefineLiveChat.appCode = appCodeHash;
+              }
+
+              let fpt_ai_livechat_script = document.createElement('script');
+              fpt_ai_livechat_script.id = 'fpt_ai_livechat_script';
+              fpt_ai_livechat_script.src = __baseUrl + '/static/fptai-livechat.js';
+              document.body.appendChild(fpt_ai_livechat_script);
+
+              let fpt_ai_livechat_stylesheet = document.createElement('link');
+              fpt_ai_livechat_stylesheet.id = 'fpt_ai_livechat_script';
+              fpt_ai_livechat_stylesheet.rel = 'stylesheet';
+              fpt_ai_livechat_stylesheet.href = __baseUrl + '/static/fptai-livechat.css';
+              document.body.appendChild(fpt_ai_livechat_stylesheet);
+
+              fpt_ai_livechat_script.onload = function () {
+                  fpt_ai_render_chatbox(objPreDefineLiveChat, __baseUrl, 'livechat.fpt.ai:443');
+              }
+            </script>
 	<script src="/assets/js/jQuery_v3.1.1.min.js"></script>
 	<script src="/assets/js/owl.carousel.min.js"></script>
 	<script src="/assets/js/bootstrap.min.js"></script>
 	<script src="/assets/js/jquery.magnific-popup.js"></script>
 	<script src="/assets/js/jquery.firstVisitPopup.js"></script>
 	<script src="/assets/js/custom.js"></script>
-    <script src="/assets/js/jquery-ui.js"></script>
-   <!-- Shopping Cart JS -->
-    <script src="/assets/js/shopping-cart-app.js"></script>
+	<script src="/assets/js/jquery-ui.js"></script>
+	<!-- Shopping Cart JS -->
+	<script src="/assets/js/shopping-cart-app.js"></script>
 </body>
 
 </html>

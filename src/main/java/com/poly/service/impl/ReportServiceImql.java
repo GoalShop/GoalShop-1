@@ -42,4 +42,10 @@ public class ReportServiceImql implements ReportService {
 		return reportproductbydaydao.reportProdctByDay( minday,  Max);
 	}
 
+	@Override
+	public List<ReportCategory> revenueByMonth() {
+		// TODO Auto-generated method stub
+		return reportdao.revenueByMonth();
+	}
+
 }

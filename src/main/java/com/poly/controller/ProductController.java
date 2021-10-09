@@ -30,7 +30,7 @@ public class ProductController {
 		if (x < 0) {
 		}
 		model.addAttribute("page", x);
-		int size = 9;
+		int size = 6;
 		if (cid.isPresent()) {
 			List<Product> list = productService.findByCategoryId(cid.get());
 			model.addAttribute("items", list);

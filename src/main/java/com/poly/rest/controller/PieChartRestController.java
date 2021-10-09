@@ -36,6 +36,8 @@ public class PieChartRestController {
         return new ResponseEntity<>(report, HttpStatus.OK);
     }
 	
+	
+	
 	@GetMapping("/getDatareport")
 	public ResponseEntity<?> getDataChartReport(Model model,@RequestParam(value= "minday" , required = false)@DateTimeFormat(pattern="yyyy-MM-dd") Date minday,
     		@RequestParam(value = "maxday", required = false)@DateTimeFormat(pattern="yyyy-MM-dd") Date maxday){

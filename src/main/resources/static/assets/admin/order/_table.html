@@ -3,12 +3,12 @@
     <table class="table table-condensed">
         <thead class="bg-success" style="font-variant: small-caps;">
             <tr>
-                 <th>Order No.</th>
-                 <th>Username</th>
-                 <th>Oder Date</th>
-                 <th>Shopping Address</th>
-                 <th>Phone</th>
-                 <th>Status</th>
+                 <th>Mã đơn hàng</th>
+                 <th>Khách hàng</th>
+                 <th>Ngày đặt</th>
+                 <th>Địa chỉ giao hàng</th>
+                 <th>Số Điện thoại</th>
+                 <th>Trạng thái đơn hàng</th>
                 <th></th>
             </tr>
         </thead>
@@ -19,14 +19,14 @@
                 <td>{{ord.createDate | date : 'dd-MM-yyyy'}}</td>
                 <td>{{ord.address}}</td>
                 <td>{{ord.phone}}</td>  
-<!--                 <td style="color: #B22222;font-weight: bolder;">{{ord.status==0?'Đang xử lý' : -->
-<!--                 		ord.status==1?'Đang giao hàng': -->
-<!--                 		ord.status==2?'Đã hoàn thành' :'Đã huỷ'}}</td> -->
+<!--                 <td style="color: #B22222;font-weight: bolder;">{{ord.status==0?'Ä�ang xá»­ lÃ½' : -->
+<!--                 		ord.status==1?'Ä�ang giao hÃ ng': -->
+<!--                 		ord.status==2?'Ä�Ã£ hoÃ n thÃ nh' :'Ä�Ã£ huá»·'}}</td> -->
 				<td>
-					<b style="color: #00008B;">{{ord.status==0?'Đang xử lý' :''}}</b>
-					<b style="color: #FFD700;">{{ord.status==1?'Đang giao hàng' :''}}</b>
-					<b style="color: #2E8B57;">{{ord.status==2?'Đã hoàn thành' :''}}</b>
-					<b style="color: #DC143C;">{{ord.status==3?'Đã huỷ' :''}}</b>
+					<b style="color: #00008B;">{{ord.status==0?'Đang sử lý' :''}}</b>
+					<b style="color: #FFD700;">{{ord.status==1?'Đã giao hàng' :''}}</b>
+					<b style="color: #2E8B57;">{{ord.status==2?'Hoàn thành' :''}}</b>
+					<b style="color: #DC143C;">{{ord.status==3?'Đã hủy' :''}}</b>
 						</td>
                 <td ></td>
                 <td>

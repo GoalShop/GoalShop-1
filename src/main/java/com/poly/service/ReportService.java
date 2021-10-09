@@ -12,4 +12,6 @@ public interface ReportService {
 	
 	List<ReportProductbyDay> getReportProductbyDaynoMinMax();
 	List<ReportProductbyDay> getReportProductbyDayMinMax(Date minday , Date maxday);
+
+	List<ReportCategory> revenueByMonth();
 }
