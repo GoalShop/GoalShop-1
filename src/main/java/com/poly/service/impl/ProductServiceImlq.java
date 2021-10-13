@@ -75,6 +75,12 @@ public class ProductServiceImlq implements ProductService {
 		return null;
 	}
 
+	@Override
+	public List<Product> findByTrademarkId(Integer integer) {
+		// TODO Auto-generated method stub
+		return pdao.findByTrademarkId(integer);
+	}
+
 
 
 	

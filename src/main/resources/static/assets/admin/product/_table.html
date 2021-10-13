@@ -11,6 +11,7 @@
 			<th>Ngày nhập</th>
 			<th>Hình</th>
 			<th>Loại sản phẩm</th>
+			<th>Thương hiệu</th>
 			<th>Khuyến mãi</th>
 			<th>Hàng mới</th>
 			<th>Đăc biệt</th>
@@ -26,6 +27,7 @@
 			<td>{{item.product_date | date:'dd-MM-yyyy'}}</td>
 			<td ><img ng-src="{{'/assets/images/' + item.image1}}" style="max-width: 70px; height: 70px;"></td>
 			<td>{{item.category.name}}</td>
+			<td>{{item.trademark.name}}</td>
 			<td>{{item.distcount?'Yes':'No'}}</td>
 			<td>{{item.lastest?'Yes':'No'}}</td>
 			<td>{{item.special?'Yes':'No'}}</td>

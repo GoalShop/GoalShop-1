@@ -2,6 +2,7 @@ app.controller("product-ctrl", function($scope, $http) {
     $scope.items = [];
     $scope.cates = [];
     $scope.form = {};
+     $scope.trads = [];
 
     $scope.initialize = function() {
         $http.get("/rest/products").then(resp => {
@@ -12,6 +13,9 @@ app.controller("product-ctrl", function($scope, $http) {
         });
         $http.get("/rest/categories").then(resp => {
             $scope.cates = resp.data;
+        });
+        $http.get("/rest/trademarks").then(resp => {
+            $scope.trads = resp.data;
         });
     }
     $scope.initialize();

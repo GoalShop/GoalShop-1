@@ -24,17 +24,21 @@ public class ProductController {
 	ProductDao pdao;
 	
 	@RequestMapping("/product/list")
-	public String list(Model model, @RequestParam("cid") Optional<Integer> cid 
+	public String list(Model model, @RequestParam("cid") Optional<Integer> cid ,Optional<Integer> tid 
 			, @RequestParam("page") Optional<Integer> page) {
 		int x = page.orElse(0);
 		if (x < 0) {
 		}
 		model.addAttribute("page", x);
 		int size = 6;
-		if (cid.isPresent()) {
+		if (cid.isPresent() && (tid.isPresent())) {
 			List<Product> list = productService.findByCategoryId(cid.get());
 			model.addAttribute("items", list);
-		} else {
+			List<Product> list1 = productService.findByTrademarkId(tid.get());
+			model.addAttribute("items", list1);
+		}
+		
+		else {
 
 			Page<Product> list = pdao.findAll(PageRequest.of(x, size));
 			model.addAttribute("items", list);

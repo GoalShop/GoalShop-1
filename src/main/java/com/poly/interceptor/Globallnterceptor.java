@@ -10,15 +10,21 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 import com.poly.service.CategoryService;
+import com.poly.service.TrademarkService;
 
 @Component
 public class Globallnterceptor implements HandlerInterceptor {
 	@Autowired
 	CategoryService categoryService;
+	@Autowired
+	TrademarkService trademarkService;
 	
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
 		request.setAttribute("cates", categoryService.findAll());
+		request.setAttribute("trads", trademarkService.findAll());
 	}
+
+	
 }

@@ -5,7 +5,6 @@
 
 <body>
 	<main th:object="${item}">
-		<div>
 			<div class="row mt_10 ">
 				<div class="col-md-6">
 					<div>
@@ -128,9 +127,10 @@
 								value="1" type="number">
 						</div>
 						<div class="button-group mt_30">
-							<div class="add-to-cart">
-								<a href="#"><span>Add to cart</span></a>
-							</div>
+						<a th:attr="ng-click=@{|cart.add(${product_id})|}">
+									<div class="add-to-cart">									
+									</div>
+								</a>
 							<div class="wishlist">
 								<a href="#"><span>wishlist</span></a>
 							</div>

@@ -1208,7 +1208,7 @@ Created by: 	Lionode
     }
     
     .header {
-        background: #025661;
+        background: #69BFC6;
     }
     /* ----------------------------------------------
 	2.2 Navbar
@@ -1412,7 +1412,7 @@ Created by: 	Lionode
     
     .main-search {
         margin-bottom: 0;
-        background-color: #262626;
+        background-color: #F0F0F0;
         width: 220px;
         position: relative;
     }
@@ -1423,7 +1423,7 @@ Created by: 	Lionode
         padding: 0 40px 0 10px;
         border: none;
         border-radius: 0;
-        background-color: #262626;
+        background-color: #F0F0F0;
     }
     
     .main-search .btn-lg {
@@ -1438,11 +1438,11 @@ Created by: 	Lionode
     
     .main-search .btn-lg i {
         font-size: 16px;
-        color: #fff;
+        color: #17191A;
     }
     
     .main-search .btn-lg:hover i {
-        color: #fa5460;
+        color: #11D9F7;
     }
     
     .main-search .input-group-btn {
@@ -1482,7 +1482,7 @@ Created by: 	Lionode
     }
     
     #search-overlay-btn {
-        background: transparent url("../images/sprite.png") no-repeat scroll -104px -549px;
+        background: transparent url("../assets/images/sprite.png") no-repeat scroll -104px -549px;
         border: medium none;
         display: block;
         height: 20px;
@@ -2842,7 +2842,7 @@ Created by: 	Lionode
 ----------------------------------------------- */
     
     #scrollup::before {
-        background: #e40001 none repeat scroll 0 0;
+        background: #13909B repeat scroll 0 0;
         bottom: 20px;
         color: #fff;
         content: "\f106";

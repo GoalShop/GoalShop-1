@@ -82,17 +82,21 @@
 							<option ng-repeat="c in cates" ng-value="c.id">{{c.name}}</option>
 						</select>
                     </div>
-                    <div class="form-group col-sm-3">
-                        <div>Số lượng</div>
-                       <input ng-model="form.quantity"  class="form-control">
+                     <div class="form-group col-sm-3">
+                        <div>Thương hiệu</div>
+                        <select ng-model="form.trademark.id" class="form-group">
+							<option ng-repeat="t in trads" ng-value="t.id">{{t.name}}</option>
+						</select>
                     </div>
+                   
+                    
                 </div>
                 <div class="row">
                     <div class="form-group col-sm-6">
                         <div>Ngày nhập</div>
                         <input ng-model="form.product_date" type="date" class="form-control">
                     </div>
-                    <div class="form-group col-sm-6">
+                    <div class="form-group col-sm-3">
                         <div>Sản phẩm đặc biệt</div>
                         <div class="form-control">
                             <label class="radio-inline">
@@ -104,14 +108,7 @@
                         </div>
 
                     </div>
-                   
-                </div>
-                <div class="row">
-                    <div class="form-group col-sm-6">
-                        <div>Khuyến mãi</div>
-                        <input ng-model="form.distcount" class="form-control">
-                    </div>
-                    <div class="form-group col-sm-6">
+                    <div class="form-group col-sm-3">
                         <div>Sản phẩm mới</div>
                         <div class="form-control">
                             <label class="radio-inline">
@@ -122,7 +119,42 @@
 							</label>
                         </div>
                     </div>
+                   
+                    
                 </div>
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <div>Khuyến mãi</div>
+                        <input ng-model="form.distcount" class="form-control">
+                    </div>
+                     <div class="form-group col-sm-3">
+                        <div>Số lượng</div>
+                       <input ng-model="form.quantity"  class="form-control">
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <div>Cpu || Chip</div>
+                       <input ng-model="form.chip"  class="form-control">
+                    </div>
+                </div>
+                 <div class="row">
+                 	<div class="form-group col-sm-3">
+                        <div>Ram</div>
+                       <input ng-model="form.ram"  class="form-control">
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <div>Bộ nhớ</div>
+                       <input ng-model="form.rom"  class="form-control">
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <div>Pin</div>
+                       <input ng-model="form.pin"  class="form-control">
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <div>Màn Hình</div>
+                       <input ng-model="form.resolution"  class="form-control">
+                    </div>
+                 </div>
+                 
             </div>
         </div>
     </div>

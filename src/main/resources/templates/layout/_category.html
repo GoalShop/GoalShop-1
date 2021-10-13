@@ -1,5 +1,4 @@
 
-
 <div xmlns:th="http://www.thymeleaf.org" id="category-menu"
 	class="navbar collapse in mb_40" aria-expanded="true" role="button">
 	<div class="nav-responsive">
@@ -12,6 +11,22 @@
 
 		</ul>
 	</div>
+	<div class="nav-responsive">
+		<div class="heading-part">
+			<h2 class="main_title">Thương hiệu</h2>
+		</div>
+		<ul class="nav  main-navigation collapse in">
+			<li th:each="t:${trads}" >
+				<a th:href="@{|/product/list?tid=${t.trademark_id}|}">[[${t.name}]]</a></li>
+
+		</ul>
+	</div>
+	
+
+<select  name="cars" id="cars">
+  <option th:each="t:${trads}" th:href="@{|/product/list?tid=${t.trademark_id}|}">[[${t.name}]]</option>
+  
+</select>
 </div>
 <div class="filter left-sidebar-widget mb_50">
 	<div class="heading-part mtb_20 ">

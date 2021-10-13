@@ -28,6 +28,8 @@ public interface ProductService {
 	List<Product> findByNameContaining(String name);
 
 	List<Product> findByKeywords(String keywords);
+
+	List<Product> findByTrademarkId(Integer integer);
 	
 	
 

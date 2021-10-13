@@ -39,6 +39,11 @@ public class Product {
 	String Image7;
 	String Detail;
 	String Description;
+	String Chip;
+	String Ram;
+	String Rom;
+	String Resolution;
+	String Pin;
 	Double Unit_price;
 	Integer Quantity;
 	@Temporal(TemporalType.DATE)
@@ -51,6 +56,9 @@ public class Product {
 	@ManyToOne
 	@JoinColumn(name = "Category_id")
 	Category category;
+	@ManyToOne
+	@JoinColumn(name = "Trademark_id")
+	Trademark trademark;
 	@JsonIgnore
 	@OneToMany(mappedBy = "product")
 	List<OrderDetail> orderDetails;	

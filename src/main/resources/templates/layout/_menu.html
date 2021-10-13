@@ -3,8 +3,8 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-4">
 				<div class="main-search mt_40">
-
-					<input id="search-input" name="search" value=""
+					<form th:action="@{/product/list-by-keywords}" method="post" >
+					<input id="search-input" name="keywords" 
 						placeholder="Tìm kiếm" class="form-control input-lg"
 						autocomplete="off" type="text"> <span
 						class="input-group-btn">
@@ -12,7 +12,7 @@
 							<i class="fa fa-search"></i>
 						</button>
 					</span>
-
+</form>
 				</div>
 			</div>
 			<div class="navbar-header col-xs-6 col-sm-4">
@@ -25,7 +25,7 @@
 					<button type="button" class="btn" data-target="#cart-dropdown"
 						data-toggle="collapse" aria-expanded="true">
 						<span id="shippingcart">Giỏ hàng</span><span id="cart-total">{{cart.count}}
-							items</span>
+							Sản Phẩm</span>
 					</button>
 
 				</div>
@@ -72,9 +72,9 @@
 							</table>
 						</li>
 						<li><a th:href="@{/cart/view}"> <input
-								class="btn pull-left mt_10" value="View cart" type="submit">
-						</a> <a action="checkout_page.html"> <input
-								class="btn pull-right mt_10" value="Checkout" type="submit">
+								class="btn pull-left mt_10" value="Giỏ hàng" type="submit">
+						</a> <a th:href="@{/order/checkout}" action="checkout_page.html"> <input
+								class="btn pull-right mt_10" value="Thanh toán" type="submit">
 						</a></li>
 					</ul>
 				</div>
@@ -90,8 +90,8 @@
 				<ul id="menu" class="nav navbar-nav">
 					<li><a th:href="@{/home/index}">Trang chủ</a></li>
 					<li><a th:href="@{/product/list}">Shop</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">Top Sản phẩm </a>
+					<li class="dropdown "><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown ">Top Sản phẩm </a>
 						<ul class="dropdown-menu">
 							<li><a th:href="@{/product/discount}">Sản phẩm Khuyến
 									mãi</a></li>
