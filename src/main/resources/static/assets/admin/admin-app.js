@@ -22,6 +22,10 @@ app.config(function($routeProvider) {
             templateUrl: "/assets/admin/order/index.html",
             controller: "order-ctrl"
         })
+        .when("/trademark", {
+            templateUrl: "/assets/admin/trademark/index.html",
+            controller: "trademark-ctrl"
+        })
         .when("/char", {
             templateUrl: "/assets/admin/char/index.html",
 
