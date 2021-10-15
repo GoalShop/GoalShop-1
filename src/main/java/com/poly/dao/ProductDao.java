@@ -15,6 +15,7 @@ import com.poly.entity.Category;
 import com.poly.entity.Product;
 
 import com.poly.entity.ReportCategory;
+import com.poly.entity.ReportTrademark;
 
 public interface ProductDao extends JpaRepository<Product, Integer>{
 
@@ -49,6 +50,11 @@ public interface ProductDao extends JpaRepository<Product, Integer>{
 		List<Product> findByAllSpe();
 		@Query(value = "SELECT p FROM Product p WHERE p.Lastest = true")
 		List<Product> findByAllLat();
+		@Query("SELECT new ReportTrademark(o.trademark.Trademark_id,o.trademark.name, sum(o.Unit_price), count(o)) "
+				+ " FROM Product o "
+				+ " GROUP BY o.trademark.Trademark_id ,o.trademark.name"
+				+ " ORDER BY sum(o.Unit_price) DESC")
+		List<ReportTrademark> getReportTrademark();
 
 	
 }

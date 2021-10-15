@@ -18,6 +18,7 @@
 <link rel="stylesheet" type="text/css"
 	href="/assets/admin/lib/gritter/css/jquery.gritter.css" />
 <!-- Custom styles for this template -->
+<script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
 <link href="/assets/admin/css/style.css" rel="stylesheet">
 <link href="/assets/admin/css/style-responsive.css" rel="stylesheet">
 <script src="/assets/admin/lib/chart-master/Chart.js"></script>
@@ -32,6 +33,8 @@
 <link rel="stylesheet" type="text/css" href="https://code.highcharts.com/css/highcharts.css">
 <script type="text/javascript"
     src="https://www.gstatic.com/charts/loader.js"></script>
+     <link href="/assets/admin/lib/advanced-datatable/css/demo_page.css" rel="stylesheet" />
+  <link href="/assets/admin/lib/advanced-datatable/css/demo_table.css" rel="stylesheet" />
 </head>
 
 <body ng-app="admin-app">
@@ -64,19 +67,15 @@
 					<li class="mt"><a class="active" href="#!product"> <i
 							class="fa fa-th"></i> <span>Quản lý sản phẩm</span>
 					</a></li>
-					<li class="sub-menu"><a href="#!authorize"> <i
-							class=" fa fa-cogs"></i> <span>Phân quyền</span>
-					</a></li>
+					
 					<li class="sub-menu"><a href="#!category" > <i
-							class="fa fa-desktop"></i> <span>Quản lý loại sản phẩm</span>
+							class="fa fa-list"></i> <span>Quản lý loại sản phẩm</span>
 					</a></li>
 					</li>
 					<li class="sub-menu"><a href="#!trademark" > <i
-							class="fa fa-desktop"></i> <span>Quản lý loại sản phẩm</span>
+							class="fa fa-list-ul"></i> <span>Quản lý Thương hiệu</span>
 					</a></li>
-					<li class="sub-menu"><a href="#!account"> <i
-							class="fa fa-user"></i> <span>Quản lý user</span>
-					</a></li>
+					
 					<li class="sub-menu"><a href="#!order"> <i
 							class="fa fa-tasks"></i> <span>Quản lý đơn hàng</span>
 					</a></li>
@@ -93,6 +92,12 @@
 					<li><a href="#!char4"> <i
 							class="fa fa-map-marker"></i> <span>Thống kê khách hàng </span>
 					</a></li>
+					<li class="sub-menu"><a href="#!authorize"> <i
+							class=" fa fa-cogs"></i> <span>Phân quyền</span>
+					</a></li>
+					<li class="sub-menu"><a href="#!account"> <i
+							class="fa fa-user"></i> <span>Quản lý user</span>
+					</a></li>
 				</ul>
 				<!-- sidebar menu end-->
 			</div>
@@ -104,13 +109,26 @@
 
 		
 	</section>
+	 <footer class="site-footer">
+            <div class="text-center">
+                <p>
+                    &copy; Bản Quyền thuộc về  <strong>GoalShop</strong>. Đã đăng ký bản quyền
+                </p>
+                <div class="credits">
+                    Được tạo bởi nhóm: <a href="https://www.facebook.com/GoalKilles" target="_blank">GoalKiller</a>
+                </div>
+                <a href="index.html#" class="go-top">
+                    <i class="fa fa-angle-up"></i>
+                </a>
+            </div>
+        </footer>
 	<script src="/assets/admin/admin-app.js"></script>
 	<script src="/assets/admin/product/product-ctrl.js"></script>
-	<script src="/assets/admin/char/char-ctrl.js"></script>
 	<script src="/assets/admin/authority/authority-ctrl.js"></script>
 	<script src="/assets/admin/category/category-ctrl.js"></script>
 	<script src="/assets/admin/trademark/trademark-ctrl.js"></script>
 	<script src="/assets/admin/order/order-ctrl.js"></script>
+	<script src="/assets/admin/char/char-ctrl.js"></script>
 	<script src="/assets/admin/account/account-ctrl.js"></script>
 	<script src="/assets/admin/lib/jquery/jquery.min.js"></script>
 	<script src="https://code.highcharts.com/highcharts.js"></script>

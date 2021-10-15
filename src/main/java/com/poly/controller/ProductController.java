@@ -30,7 +30,7 @@ public class ProductController {
 		if (x < 0) {
 		}
 		model.addAttribute("page", x);
-		int size = 6;
+		int size = 9;
 		if (cid.isPresent() && (tid.isPresent())) {
 			List<Product> list = productService.findByCategoryId(cid.get());
 			model.addAttribute("items", list);
@@ -60,7 +60,7 @@ public class ProductController {
 		if (x < 0) {
 		}
 		model.addAttribute("page", x);
-		int size = 6;
+		int size = 9;
 		if (cid.isPresent()) {
 			List<Product> list = productService.findByCategoryId(cid.get());
 			model.addAttribute("items", list);
@@ -79,7 +79,7 @@ public class ProductController {
 		if (x < 0) {
 		}
 		model.addAttribute("page", x);
-		int size = 6;
+		int size = 9;
 		if (cid.isPresent()) {
 			List<Product> list = productService.findByCategoryId(cid.get());
 			model.addAttribute("items", list);
@@ -98,7 +98,7 @@ public class ProductController {
 		if (x < 0) {
 		}
 		model.addAttribute("page", x);
-		int size = 6;
+		int size = 9;
 		if (cid.isPresent()) {
 			List<Product> list = productService.findByCategoryId(cid.get());
 			model.addAttribute("items", list);

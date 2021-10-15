@@ -22,6 +22,7 @@ public class Trademark {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer Trademark_id;
 	String name;
+	String Detail;
 	@JsonIgnore
 	@OneToMany(mappedBy = "trademark")
 	List<Product> Products;

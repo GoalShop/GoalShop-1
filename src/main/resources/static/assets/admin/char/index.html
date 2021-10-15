@@ -1,4 +1,30 @@
 
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <div class="panel-title">Danh sách các loại sản phẩm</div>
+    </div>
+	<table class="table table-hover table-condensed">
+	    <thead class="bg-danger">
+	        <tr>
+	            <th>Mã loại </th>
+	            <th>Tên loại</th>
+	            <th></th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	    
+			 <tr ng-repeat="item in items">
+			    
+                <td>{{item.sum.quantity}}</td>
+                
+			   
+			</tr>
+	   
+	    </tbody>
+	</table>
+</div>
+
+
 <div class="text-center" >
 	<h1>Thống kê hàng tồn kho</h1>
 	<div id="char"></div>

@@ -10,6 +10,7 @@ import com.poly.dao.ProductDao;
 import com.poly.dao.ReportProductbyDayDao;
 import com.poly.entity.ReportCategory;
 import com.poly.entity.ReportProductbyDay;
+import com.poly.entity.ReportTrademark;
 import com.poly.service.ProductService;
 import com.poly.service.ReportService;
 
@@ -46,6 +47,12 @@ public class ReportServiceImql implements ReportService {
 	public List<ReportCategory> revenueByMonth() {
 		// TODO Auto-generated method stub
 		return reportdao.revenueByMonth();
+	}
+
+	@Override
+	public List<ReportTrademark> getReportTrademark() {
+		// TODO Auto-generated method stub
+		return productDao.getReportTrademark();
 	}
 
 }

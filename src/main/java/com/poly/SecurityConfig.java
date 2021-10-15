@@ -49,8 +49,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		 http.csrf().disable();
 		 http.authorizeRequests()
 		 .antMatchers("/order/**").authenticated()
-		 .antMatchers("/admin/**").hasAnyRole("STAF","DIRE")
+		 .antMatchers("/admin/**").hasRole("DIRE")
+		 .antMatchers("/admin1/**").hasAnyRole("STAF","DIRE")
 		 .antMatchers("/rest/authorities").hasRole("DIRE")
+		 .antMatchers("/rest/report1").hasRole("DIRE")
+		 .antMatchers("/rest/report").hasRole("DIRE")
+		 .antMatchers("/rest/accounts2").hasRole("DIRE")
+		 .antMatchers("/getDatareport").hasRole("DIRE")
 		 .anyRequest().permitAll();
 		 http.formLogin()
 		 .loginPage("/security/login/form")

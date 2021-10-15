@@ -1,8 +1,8 @@
 <div class="panel panel-success">
-    <div class="panel-heading">
-        <div class="panel-title">Danh sach tai khoang</div>
-    </div>
-	<table class="table table-hover table-condensed">
+	<div class="panel-heading">
+		<div class="panel-title">Danh sach tai khoang</div>
+	</div>
+	<!-- <table class="table table-hover table-condensed">
 	    <thead class="bg-danger">
 	        <tr>
 	            <th>Tên đăng nhập</th>
@@ -16,7 +16,7 @@
 	    </thead>
 	    <tbody>
 	    
-			 <tr ng-repeat="item in pager.items">
+			 <tr ng-repeat="item in pager.items" ng-click="edit(item)">
 			    <td>{{item.username}}</td>
                 <td>{{item.password}}</td>
                 <td>{{item.fullname}}</td>
@@ -32,20 +32,49 @@
 			</tr>
 	   
 	    </tbody>
-	</table>
-	 <div class="panel-footer text-center">
-        <button ng-click="pager.first()" class="btn btn-danger">
-			<b class="glyphicon glyphicon-hand-up"></b>
-		</button>
-        <button ng-click="pager.prev()" class="btn btn-primary">
-			<b class="glyphicon glyphicon-hand-left"></b>
-		</button>
-        <button  class="btn btn-success">{{pager.page + 1}} of {{pager.count}}</button>
-        <button ng-click="pager.next()" class="btn btn-danger">
-			<b class="glyphicon glyphicon-hand-right"></b>
-		</button>
-        <button ng-click="pager.last()" class="btn btn-danger">
-			<b class="glyphicon glyphicon-hand-down"></b>
-		</button>
-    </div>
+	</table> -->
+
+</div>
+<div class="col-md-4 mb " ng-repeat="item in pager.items"
+	ng-click="edit(item)">
+	<!-- WHITE PANEL - TOP USER -->
+	<div class="white-panel pn">
+
+		<p>
+			<img ng-src="{{'/assets/images/' + item.photo}}" class="img-circle"
+				width="50">
+		</p>
+		<p>
+			<b>{{item.username}}</b>
+		</p>
+		<div class="row">
+			<div class="col-md-6">
+				<p class="small mt">Email</p>
+				<p>{{item.email}}</p>
+			</div>
+			<div class="col-md-6">
+				<p class="small mt">Họ và tên</p>
+				<p>{{item.fullname}}</p>
+			</div>
+
+
+		</div>
+
+	</div>
+</div>
+<div class="panel-footer text-center">
+	<button ng-click="pager.first()" class="btn btn-theme03">
+		<b class="glyphicon glyphicon-hand-up"></b>
+	</button>
+	<button ng-click="pager.prev()" class="btn btn-theme03">
+		<b class="glyphicon glyphicon-hand-left"></b>
+	</button>
+	<button class="btn btn-theme03">{{pager.page + 1}} of
+		{{pager.count}}</button>
+	<button ng-click="pager.next()" class="btn btn-theme03">
+		<b class="glyphicon glyphicon-hand-right"></b>
+	</button>
+	<button ng-click="pager.last()" class="btn btn-theme03">
+		<b class="glyphicon glyphicon-hand-down"></b>
+	</button>
 </div>

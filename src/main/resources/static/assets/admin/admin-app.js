@@ -28,7 +28,7 @@ app.config(function($routeProvider) {
         })
         .when("/char", {
             templateUrl: "/assets/admin/char/index.html",
-
+		controller: "char-ctrl"
         })
         .when("/char2", {
             templateUrl: "/assets/admin/char2/index.html",
@@ -43,6 +43,7 @@ app.config(function($routeProvider) {
 
         })
         .otherwise({
-            template: "<h1 class='text-center'>GoalShop</h1>"
+           
+             templateUrl: "/assets/admin/layout/index.html",
         });
 })

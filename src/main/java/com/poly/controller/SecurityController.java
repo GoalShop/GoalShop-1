@@ -22,9 +22,8 @@ public class SecurityController {
 		return "security/login";
 	}
 	@RequestMapping("/security/unauthoried")
-	public String unauthoried( Model model) {
-		model.addAttribute("message","ban k co quyen ");
-		return "security/login";
+	public String unauthoried( ) {
+		return "redirect:/assets/admin/404.html";
 	}
 	@RequestMapping("/security/logoff/success")
 	public String logoff( Model model) {

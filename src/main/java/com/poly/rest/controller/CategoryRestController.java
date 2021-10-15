@@ -41,7 +41,7 @@ public class CategoryRestController {
 		return categoryService.update(category);
 	}
 	@DeleteMapping("{category_id}")
-	public void delete(@PathVariable("id")Integer category_id) {
+	public void delete(@PathVariable("category_id")Integer category_id) {
 		categoryService.delete(category_id);
 	}
 }

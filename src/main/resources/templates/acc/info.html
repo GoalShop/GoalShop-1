@@ -2,11 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	th:replace="~{/acc/index ::dynamic(~{::main})}">
 <main>
-	<div class="panel panel-default " >
+	<div class="panel panel-info " >
 		
-		<div class="panel-heading text-center" style="color: #54aee2;font-style:oblique;font-variant: inherit;font-weight: bolder; ">Profile User</div>
+		<div class="panel-heading text-center" style="font-style:oblique;font-variant: inherit;font-weight: bolder; ">Thông tin tài khoản</div>
 		<div class="panel-body">
-			<form tH:action="@{/infonew}" method="post" modelAttribute="acc"
+			<form th:action="@{/infonew}" method="post" modelAttribute="acc"
 				enctype="multipart/form-data">
 				<div class="row">
 					<div class="col-sm-4 text-center">
@@ -18,24 +18,24 @@
 					<div class="col-sm-8">
 						<div class="row">
 							<div class="form-group col-sm-6">
-								<div>Username</div>
+								<div>Tên tài khoản:</div>
 								<input name="username" th:value="${#request.remoteUser}"
 									class="form-control" readonly="readonly">
 							</div>
 							<div class="form-group col-sm-6">
-								<div>Password</div>
+								<div>Mật khẩu</div>
 								<input type="text" name="Password" th:value="${acc.Password}"
 									class="form-control">
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-sm-6">
-								<div>Image</div>
+								<div>Hình ảnh</div>
 								<input type="hidden" name="Photo" th:value="${acc.Photo}">
 								<input type="file" name="photo_img" class="form-control">
 							</div>
 							<div class="form-group col-sm-6">
-								<div>Fullname</div>
+								<div>Họ và tên:</div>
 								<input type="text" name="Fullname" th:value="${acc.Fullname}"
 									class="form-control">
 							</div>
@@ -45,16 +45,18 @@
 									class="form-control">
 							</div>
 							<div class="form-group col-sm-6">
-								<div>Phone</div>
+								<div>Điện thoại</div>
 								<input type="text" name="Phone" th:value="${acc.Phone}"
 									class="form-control">
 							</div>
 						</div>
 						<i class="pull-left text-danger" th:text="${message}"></i> <br>
-						<button type="submit" class="btn btn-success">Update</button>
+						<button type="submit" class="btn btn-success">Cập nhập</button>
+						</div>
+						</div>
 			</form>
 		</div>
 	</div>
-	</div>
+	
 </main>
 </html>

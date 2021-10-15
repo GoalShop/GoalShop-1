@@ -5,12 +5,12 @@
 	<form th:action="@{/signupnew}" method="post" modelAttribute="acc"
 		class="col-sm-8 col-sm-offset-2">
 
-		<div class="panel-heading text-center">SIGN UP</div>
+		<div class="panel-heading text-center">Đăng ký tài khoản</div>
 		<i class="pull-left text-danger" th:text="${message}"></i>
 		<div class="form-group">
 			<input type="text" name="Username" id="username" 
 				class="form-control " placeholder="Username"> <i
-				class="col-sm-12" style="color: red;">*Không được bỏ trống</i>
+				class="col-sm-12" style="color: red;">Không được bỏ trống</i>
 		</div>
 		<br>
 
@@ -18,45 +18,44 @@
 		<div class="form-group">
 			<input type="text" name="Fullname" id="Fullname" 
 				class="form-control" placeholder="Fullname?"> <i
-				class="col-sm-12" style="color: red;">*Không được bỏ trống</i>
+				class="col-sm-12" style="color: red;">Không được bỏ trống</i>
 		</div>
 
 		<br>
 		<div class="form-group">
 			<input type="password" name="Password" id="password" 
 				class="form-control" placeholder="Password"> <i
-				class="col-sm-12" style="color: red;">*Không được bỏ trống</i>
+				class="col-sm-12" style="color: red;">Không được bỏ trống</i>
 		</div>
 		<br>
 		<div class="form-group">
 			<input type="password" name="confim-Password" id="confim-password"
 				 class="form-control" placeholder="confim-Password">
-			<i class="col-sm-12" style="color: red;">*Không được bỏ trống</i>
+			<i class="col-sm-12" style="color: red;">Không được bỏ trống</i>
 		</div>
 		<br>
 		<div class="form-group">
 			<input type="email" name="Email" id="email"
 				class="form-control" placeholder="email"> <i
-				class="col-sm-12" style="color: red;">*Không được bỏ trống</i>
+				class="col-sm-12" style="color: red;">Không được bỏ trống</i>
 		</div>
 		<br>
 		<div class="form-group">
 			<input type="text" name="Phone" id="phone"
 				class="form-control" placeholder="phone"> <i
-				class="col-sm-12" style="color: red;">*Không được bỏ trống</i>
+				class="col-sm-12" style="color: red;">Không được bỏ trống</i>
 		</div>
 		<br>
 		<div class="form-group">
 			<div class="row">
 				<div class=" col-sm-8">
 					<div class="text-center">
-						<a th:href="@{|/home/forgot|}" class="forgot-password">* Forgot
-							Password?</a>
+						<a th:href="@{|/home/forgot|}" class="forgot-password">Quên mật khẩu</a>
 					</div>
 				</div>
 				<div class=" col-sm-2">
 					<div class="text-center">
-						<a th:href="@{/security/login/form}" class="Login">* Login</a>
+						<a th:href="@{/security/login/form}" class="Login">* Đăng nhập</a>
 					</div>
 				</div>
 			</div>
@@ -65,7 +64,7 @@
 			<div class="row">
 				<div class="col-sm-7 col-sm-offset-3">
 					<input type="submit" name="login-submit" id="login-submit"
-						tabindex="4" class="form-control btn btn-login" value="SIGN UP">
+						tabindex="4" class="form-control btn btn-login" value="Đăng ký">
 				</div>
 			</div>
 		</div>

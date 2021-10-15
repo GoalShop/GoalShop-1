@@ -8,7 +8,9 @@
                 <label for="image">
 					<img ng-src="{{'/assets/images/' + form.photo}}" style="max-width: 100%; height: 200px;">
 				</label>
+				
             </div>
+            
             <div class="col-sm-8">
                 <div class="row">
                     <div class="form-group col-sm-6">
@@ -56,6 +58,9 @@
 		</button>
         <button ng-click="reset()" class="btn btn-info">
 			<b class="glyphicon glyphicon-refresh"></b>Reset
+		</button>
+		 <button ng-click="back()" class="btn btn-info">
+			<b class="fa fa-sign-out"></b>Trở lại
 		</button>
     </div>
 </div>

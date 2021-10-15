@@ -19,7 +19,7 @@
 						class="caret"></span>
 				</span>
 					<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-						<li><a th:href="@{/home/forgot}">Đổi mật khẩu</a></li>
+						<li><a th:href="@{/home/change}">Đổi mật khẩu</a></li>
 						<li><a th:href="@{|/home/info?username=${#request.remoteUser}|}" >Profile</a></li>
 						
 					</ul></li>
@@ -28,8 +28,12 @@
 					<li><a th:href="@{/security/logoff}">Đăng xuất</a></li>
 					<li><a th:href="@{/order/list}">Đơn hàng </a></li>
 					<li
-						th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}">
-						<a th:href="@{/admin/home/index}">Quản trị</a>
+						th:if="${#request.isUserInRole('DIRE')}">
+						<a th:href="@{/admin/home/index}">Quản Trị</a>
+					</li>
+					<li
+						th:if="${ #request.isUserInRole('STAF')}">
+						<a th:href="@{/admin1}">Quản Trị</a>
 					</li>
 				</th:block>
 				<th:block th:unless="${#request.remoteUser}">

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.poly.entity.ReportTrademark;
 import com.poly.entity.ReportCategory;
 import com.poly.entity.ReportProductbyDay;
 import com.poly.service.ReportService;
@@ -35,6 +36,13 @@ public class PieChartRestController {
        
         return new ResponseEntity<>(report, HttpStatus.OK);
     }
+	@GetMapping("/getdata1")
+    public ResponseEntity<?> getPieChart1() {
+		List<ReportTrademark>  report =  reportdao.getReportTrademark();
+       
+        return new ResponseEntity<>(report, HttpStatus.OK);
+    }
+	
 	
 	
 	

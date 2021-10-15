@@ -12,27 +12,27 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="form-group col-sm-4">
-                            <div>Order Number</div>
+                            <div>Mã đơn hàng</div>
                             <input th:field="*{Order_id}" class="form-control" readonly>
                         </div>
                         <div class="form-group col-sm-4">
-                            <div>Purchaser:</div>
+                            <div>Người mua:</div>
                             <input th:field="*{account.Username}" class="form-control" readonly>
                         </div>
                         <div class="form-group col-sm-4">
-                            <div>Email::</div>
+                            <div>Email:</div>
                             <input th:field="*{account.Email}" class="form-control" readonly>
                         </div>
                          <div class="form-group col-sm-4">
-                            <div>Purchase Date :</div>
+                            <div>Ngày đặt mua:</div>
                             <input th:field="*{CreateDate}" class="form-control" readonly>
                         </div>
                         <div class="form-group col-sm-4">
-                            <div>Phone number :</div>
+                            <div>Số điện thoại :</div>
                             <input th:field="*{Phone}" class="form-control" readonly>
                         </div>
                         <div class="form-group col-sm-4">
-                            <div>Status :</div>
+                            <div>Trạng thái :</div>
                             <div th:if="*{Status}==0" class="form-control" style="color: blue;" >Đang xử lý</div>
                             <div th:if="*{Status}==1" class="form-control"  >Đang giao hàng</div>
                             <div th:if="*{Status}==2" class="form-control"  >Đã hoàn thành</div>
@@ -42,17 +42,17 @@
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-12">
-                            <div>Shipping Address:</div>
+                            <div>Địa chỉ đơn hàng:</div>
                             <textarea th:field="*{Address}" class="form-control" readonly></textarea>
                         </div>
                     </div>
                 </div>
            </div>
-			 <div class="panel panel-primary">
-                <div class="panel-heading"> <strong>Sản phẩm của đơn hàng</strong></div>
-                <table class="table">
-                    <thead>
-                        <tr>
+			 <div class="panel panel-info">
+                <div class="panel-heading"> <strong>Chi tiết  đơn hàng</strong></div>
+                <table class="table ">
+                    <thead >
+                        <tr >
                             <th>Mã sản phẩm</th>
                             <th>Tên sản phẩm</th>
                            
@@ -63,8 +63,8 @@
                             <th>Tổng</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr  th:each="detail : *{orderDetails}" th:object="${detail}">
+                    <tbody >
+                        <tr   th:each="detail : *{orderDetails}" th:object="${detail}">
                             <td>[[*{product.Product_id}]]</td>
                             <td>[[*{product.Name}]]</td>
                             

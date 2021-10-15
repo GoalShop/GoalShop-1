@@ -3,7 +3,7 @@
 	class="navbar collapse in mb_40" aria-expanded="true" role="button">
 	<div class="nav-responsive">
 		<div class="heading-part">
-			<h2 class="main_title">Top category</h2>
+			<h2 class="main_title">Loại Sản Phẩm</h2>
 		</div>
 		<ul class="nav  main-navigation collapse in">
 			<li th:each="c:${cates}" >
@@ -30,52 +30,34 @@
 </div>
 <div class="filter left-sidebar-widget mb_50">
 	<div class="heading-part mtb_20 ">
-		<h2 class="main_title">Refinr Search</h2>
+		<h2 class="main_title">Tìm kiếm nâng cao</h2>
 	</div>
 	<div class="filter-block">
-		<p>
-			<label for="amount">Price range:</label> <input type="text"
-				id="amount" readonly>
-		</p>
+		
 		<div id="slider-range" class="mtb_20"></div>
 		<div class="list-group">
 			<div class="list-group-item mb_10">
-				<label>Color</label>
-				<div id="filter-group1">
+				<label>Thương hiệu</label>
+				<div th:each="t:${trads}" id="filter-group1">
 					<div class="checkbox">
-						<label> <input value="" type="checkbox"> Red (10)
+						<label> <input value="" type="checkbox"> [[${t.name}]]
 						</label>
 					</div>
-					<div class="checkbox">
-						<label> <input value="" type="checkbox"> Green
-							(06)
-						</label>
-					</div>
-					<div class="checkbox ">
-						<label> <input value="" type="checkbox"> Blue(09)
-						</label>
-					</div>
+					
 				</div>
+				
 			</div>
 			<div class="list-group-item mb_10">
-				<label>Size</label>
+				<label>Loại Sản Phẩm</label>
 				<div id="filter-group3">
-					<div class="checkbox">
-						<label> <input value="" type="checkbox"> Big (3)
+					<div th:each="c:${cates}" class="checkbox">
+						<label> <input value="" type="checkbox">[[${c.name}]]
 						</label>
 					</div>
-					<div class="checkbox">
-						<label> <input value="" type="checkbox"> Medium
-							(2)
-						</label>
-					</div>
-					<div class="checkbox">
-						<label> <input value="" type="checkbox"> Small (1)
-						</label>
-					</div>
+					
 				</div>
 			</div>
-			<button type="button" class="btn">Refine Search</button>
+			<button type="button" class="btn">Tìm kiếm </button>
 		</div>
 	</div>
 </div>

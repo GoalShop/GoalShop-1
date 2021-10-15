@@ -21,6 +21,10 @@ app.controller("account-ctrl", function($scope, $http) {
         $scope.form = angular.copy(item);
         $(".nav-tabs a:eq(0)").tab('show');
     }
+    $scope.back = function() {
+       
+        $(".nav-tabs a:eq(1)").tab('show');
+    }
     $scope.create = function() {
         var item = angular.copy($scope.form);
         $http.post(`/rest/accounts2`, item).then(resp => {
@@ -69,7 +73,7 @@ app.controller("account-ctrl", function($scope, $http) {
     }
     $scope.pager = {
         page: 0,
-        size: 10,
+        size: 9,
         get items() {
             var start = this.page * this.size;
             return $scope.items.slice(start, start + this.size);
