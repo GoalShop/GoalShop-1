@@ -32,6 +32,11 @@ public class Order implements Serializable{
 	String Address;
 	Integer Status;
 	String Phone; 
+	double price;
+	String currency;
+	String method;
+	String intent;
+	String description;
 	@Temporal(TemporalType.DATE)
 	@Column(name = "Createdate")
 	Date CreateDate = new Date();

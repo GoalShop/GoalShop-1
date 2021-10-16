@@ -34,8 +34,31 @@
 							class="btn btn-info"> <b class="fa fa-search"></b>
 						
 						</a>
-						<a th:if="*{order.Status}==0" th:href="@{|/order/delete/${order.order_id}|}"
-							class="btn btn-danger"> <b class="fa fa-trash"></b></a>
+						
+							
+							<button th:if="*{order.Status}==0" type="button" class="btn btn-warning"
+								data-toggle="modal" data-target="#myModal"><b class="fa fa-trash"></b></button> <!-- Modal -->
+							<div class="modal fade" id="myModal" role="dialog">
+								<div class="modal-dialog">
+
+									<!-- Modal content-->
+									<div class="modal-content">
+										<div class="modal-body text-center">
+											<p style="color: red;">Bạn muốn xoá sản phẩm khỏi danh sách yêu thích</p>
+										</div>
+										<div class="modal-footer">
+										<a th:href="@{|/order/delete/${order.order_id}|}"
+											class="btn btn-warning" >Delete</a>
+											
+										<button type="button" class="btn btn-default"
+												data-dismiss="modal">Close</button>
+											
+											
+										</div>
+								</div>
+								</div>
+								</div>
+								
 						</td>
 					</tr>
 				</tbody>

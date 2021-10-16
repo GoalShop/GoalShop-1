@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{layout/index :: dynamic(~{::main})}">
+<body>
+	<main>
+	
+  <div class="panel panel-primary ">
+                <div class="heading-part">
+			<h2 class="main_title text-center">Thanh toan online</h2>
+		</div>
+                <div class="panel-body">
+                    <div class="row">
+						
+				<form method="post" action="/pay">
+					<div>
+						<h3>Payment</h3>
+						<div class="form-group col-sm-12 ">
+
+							<label for="price">Total</label> <input type="text" id="price" readonly class="form-control" 
+								name="price" value="{{order.price| number:1}} "></input>
+						</div>
+						<div class="form-group col-sm-12 ">
+							<label for="currency">Currency</label> <input type="text" readonly class="form-control" 
+								id="currency" name="currency" placeholder="Enter Currency"
+								value="USD">
+						</div>
+						<div class="form-group col-sm-12 ">
+							<label for="method">Payment Method</label> <input type="text" readonly class="form-control" 
+								id="method" name="method" placeholder="Payment Method"
+								value="paypal">
+						</div>
+						<div class="form-group col-sm-12 ">
+							<label for="intent">Intent</label> <input type="text" id="intent" readonly class="form-control" 
+								name="intent" value="sale">
+						</div>
+						<div class="form-group col-sm-12 ">
+							<label for="description">Payment Description</label> <input readonly class="form-control" 
+								type="text" id="description" name="description"
+								placeholder="Payment Description" value="paypal">
+						</div>
+					</div>
+
+					<input  type="submit" value="Continue to checkout" class="btn">
+				</form>
+				</div>
+				</div>
+				</div>
+			
+		
+		
+	</main>
+</body>
+
+</html>

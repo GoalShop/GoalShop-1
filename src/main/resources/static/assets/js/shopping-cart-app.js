@@ -7,8 +7,8 @@ jQuery(document).ready(function($) {
 app.controller("shopping-cart-ctrl", function($scope, $http) {
 
     $scope.cart = {
-        items: [],
-        prod : [] ,  
+          items: [],
+        prod : [] ,
         add(product_id) {
             var item = this.items.find(item => (item.product_id == product_id ));
 
@@ -79,6 +79,7 @@ app.controller("shopping-cart-ctrl", function($scope, $http) {
         address: "",
         phone : "",
         status : 0,
+        price : $scope.cart.amount,
         account: { username: $("#username").text()},
         get orderDetails() {
             return $scope.cart.items.map(item => {
@@ -95,6 +96,16 @@ app.controller("shopping-cart-ctrl", function($scope, $http) {
                 alert("dat hang thanh cong");
                 $scope.cart.clear();
                 location.href = "/order/detail/" + resp.data.order_id;
+            }).catch(error => {
+                alert("dat hang loi");
+                console.log(error)
+            })
+        },
+        purchase1() {
+            var order = angular.copy(this);
+            $http.post("/rest/orders", order).then(resp => {
+             
+                
             }).catch(error => {
                 alert("dat hang loi");
                 console.log(error)

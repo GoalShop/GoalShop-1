@@ -55,11 +55,11 @@
 			</div>
 		</header>
 		<aside>
-			<div id="sidebar" class="nav-collapse ">
+			<div id="sidebar" class="nav-collapse " modelAttribute="acc" method="post">
 				<!-- sidebar menu start-->
 				<ul class="sidebar-menu" id="nav-accordion">
 					<p class="centered">
-						<a href="profile.html"><img src="img/ui-sam.jpg"
+						<a href="profile.html"><img th:src="@{|/assets/images/${acc.Photo}|}"
 							class="img-circle" width="80"></a>
 					</p>
 					<h5 class="centered">Sam Soffes</h5>
