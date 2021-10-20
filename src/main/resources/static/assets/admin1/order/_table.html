@@ -1,37 +1,52 @@
-<div class="panel panel-info">
-    <div >Danh sách đơn hàng
-    	<div class="text-right" >
-    <button class="btn btn-success"  onclick="ExportToExcel('xlsx')">Xuất excel</button>
-    </div>
-    </div>
-    
-    <table class="table table-condensed" id="tbl_exporttable_to_xls">
-        <thead class="bg-success" style="font-variant: small-caps;">
-            <tr>
-                 <th>Mã đơn hàng</th>
+
+ <div class="col-md-12 mt">
+            <div class="content-panel">
+              <table class="table table-hover" id="tbl_exporttable_to_xls">
+                <h4><i class="fa fa-angle-right"></i>Danh sách đơn hàng  </h4>
+               	<div class="row">
+            <div class="col-md-4">
+                Search By:
+                <select class="form-control" ng-model='SearchTerm'>
+                    <option value='$'>Tất cả</option>
+                    <option value='order_id'>Mã sản phẩm</option>
+                    <option value='username'>tên sản phẩm</option>
+                    <option value='trademark.name'>Thương hiệu</</option>
+                    <option value='status'>Giá</option>
+                </select>
+            </div>
+            <div class="col-md-8">
+                Search Key:
+                <input type="text" class="form-control" ng-model="searchKeyword[SearchTerm]">
+            </div>
+        </div>
+                <hr>
+                <thead>
+                  <tr>
+                     <th>Mã đơn hàng</th>
                  <th>Khách hàng</th>
                  <th>Ngày đặt</th>
                  <th>Địa chỉ giao hàng</th>
                  <th>Số Điện thoại</th>
+                 <th>Tổng tiền</th>
+                 <th>Trạng thái thanh toán</th>
                  <th>Trạng thái đơn hàng</th>
                 <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="ord in pager.order">
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr dir-paginate="ord in order | filter: searchKeyword | itemsPerPage:10">
                 <td>{{ord.order_id}}</td>
                 <td>{{ord.account.username}}</td>
                 <td>{{ord.createDate | date : 'dd-MM-yyyy'}}</td>
                 <td>{{ord.address}}</td>
-                <td>{{ord.phone}}</td>  
-<!--                 <td style="color: #B22222;font-weight: bolder;">{{ord.status==0?'Ä�ang xá»­ lÃ½' : -->
-<!--                 		ord.status==1?'Ä�ang giao hÃ ng': -->
-<!--                 		ord.status==2?'Ä�Ã£ hoÃ n thÃ nh' :'Ä�Ã£ huá»·'}}</td> -->
+                <td>{{ord.phone}}</td>   <td>{{ord.price | number :2}}</td>  <td>{{ord.method}}</td> 
 				<td>
-					<b style="color: #00008B;">{{ord.status==0?'Đang sử lý' :''}}</b>
-					<b style="color: #FFD700;">{{ord.status==1?'Đã giao hàng' :''}}</b>
-					<b style="color: #2E8B57;">{{ord.status==2?'Hoàn thành' :''}}</b>
-					<b style="color: #DC143C;">{{ord.status==3?'Đã hủy' :''}}</b>
+				<span class="label label-info label-mini">{{ord.status==0?'Đang sử lý' :''}}</span>
+					
+					<span class="label label-warning label-mini">{{ord.status==1?'Đã giao hàng' :''}}</span>
+					
+					<span class="label label-success label-mini">{{ord.status==2?'Hoàn thành' :''}}</span>
+					<span class="label label-danger label-mini">{{ord.status==3?'Đã hủy' :''}}</span>
 						</td>
                 <td ></td>
                 <td>
@@ -41,24 +56,33 @@
                 </td>
 
             </tr>
-        </tbody>
-    </table>
-    <div class="panel-footer text-center">
-        <button ng-click="pager.first()" class="btn btn-danger">
-            <b class="glyphicon glyphicon-hand-up"></b>
-        </button>
-        <button ng-click="pager.prev()" class="btn btn-primary">
-            <b class="glyphicon glyphicon-hand-left"></b>
-        </button>
-        <button class="btn btn-success">{{pager.page + 1}} of {{pager.count}}</button>
-        <button ng-click="pager.next()" class="btn btn-primary">
-            <b class="glyphicon glyphicon-hand-right"></b>
-        </button>
-        <button ng-click="pager.last()" class="btn btn-danger">
-            <b class="glyphicon glyphicon-hand-down"></b>
-        </button>
-    </div>
-</div>
+                </tbody>
+              </table>
+              <div class="panel-footer text-center">
+ <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true"  >
+                    </dir-pagination-controls></div>
+              <!-- <div class=" text-center">
+					<button ng-click="pager.first()" class="btn btn-theme03">
+						<b class="glyphicon glyphicon-hand-up"></b>
+					</button>
+					<button ng-click="pager.prev()" class="btn btn-theme03">
+						<b class="glyphicon glyphicon-hand-left"></b>
+					</button>
+					<button class="btn btn-theme03">{{pager.page + 1}} of
+						{{pager.count}}</button>
+					<button ng-click="pager.next()" class="btn btn-theme03">
+						<b class="glyphicon glyphicon-hand-right"></b>
+					</button>
+					<button ng-click="pager.last()" class="btn btn-theme03">
+						<b class="glyphicon glyphicon-hand-down"></b>
+					</button>
+					<button class="btn btn-info" onclick="ExportToExcel('xlsx')">Xuất
+						excel</button>
+				</div>	 -->
+            </div>
+          </div>
+          <!-- /col-md-12 -->
+        </div>
 <script>
 
         function ExportToExcel(type, fn, dl) {

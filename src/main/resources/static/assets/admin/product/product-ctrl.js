@@ -4,7 +4,8 @@ app.controller("product-ctrl", function($scope, $http) {
     $scope.form = {};
     $scope.trads = [];
   
-
+	$scope.searchKeyword = {}
+     $scope.SearchTerm = '$';
     $scope.initialize = function() {
         $http.get("/rest/products").then(resp => {
             $scope.items = resp.data;
@@ -93,7 +94,7 @@ app.controller("product-ctrl", function($scope, $http) {
       $scope.searchName   = '';
     $scope.pager = {
         page: 0,
-        size: 100,
+        size: 5,
         get items() {
             var start = this.page * this.size;
             return $scope.items.slice(start, start + this.size);

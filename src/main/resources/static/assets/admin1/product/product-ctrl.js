@@ -2,8 +2,10 @@ app.controller("product-ctrl", function($scope, $http) {
     $scope.items = [];
     $scope.cates = [];
     $scope.form = {};
-     $scope.trads = [];
-
+    $scope.trads = [];
+  
+	$scope.searchKeyword = {}
+     $scope.SearchTerm = '$';
     $scope.initialize = function() {
         $http.get("/rest/products").then(resp => {
             $scope.items = resp.data;
@@ -89,6 +91,7 @@ app.controller("product-ctrl", function($scope, $http) {
             console.log("Error", error);
         })
     }
+      $scope.searchName   = '';
     $scope.pager = {
         page: 0,
         size: 5,

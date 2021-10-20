@@ -18,7 +18,8 @@
 <link rel="stylesheet" type="text/css"
 	href="/assets/admin/lib/gritter/css/jquery.gritter.css" />
 <!-- Custom styles for this template -->
-<script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+<script type="text/javascript"
+	src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
 <link href="/assets/admin/css/style.css" rel="stylesheet">
 <link href="/assets/admin/css/style-responsive.css" rel="stylesheet">
 <script src="/assets/admin/lib/chart-master/Chart.js"></script>
@@ -30,11 +31,22 @@
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-<link rel="stylesheet" type="text/css" href="https://code.highcharts.com/css/highcharts.css">
+<link rel="stylesheet" type="text/css"
+	href="https://code.highcharts.com/css/highcharts.css">
 <script type="text/javascript"
-    src="https://www.gstatic.com/charts/loader.js"></script>
-     <link href="/assets/admin/lib/advanced-datatable/css/demo_page.css" rel="stylesheet" />
-  <link href="/assets/admin/lib/advanced-datatable/css/demo_table.css" rel="stylesheet" />
+	src="https://www.gstatic.com/charts/loader.js"></script>
+<link href="/assets/admin/lib/advanced-datatable/css/demo_page.css"
+	rel="stylesheet" />
+<link href="/assets/admin/lib/advanced-datatable/css/demo_table.css"
+	rel="stylesheet" />
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+<font></font>
+<font></font>
+<script type="text/javascript" charset="utf8"
+	src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+<font></font>
+
 </head>
 
 <body ng-app="admin-app">
@@ -45,7 +57,7 @@
 					data-original-title="Toggle Navigation"></div>
 			</div>
 			<!--logo start-->
-			<a href="/" class="logo"><b>Goal<span>Shop</span></b></a>
+			<a href="/home/index" class="logo"><b>Goal<span>Shop</span></b></a>
 			<!--logo end-->
 
 			<div class="top-menu">
@@ -55,32 +67,34 @@
 			</div>
 		</header>
 		<aside>
-			<div id="sidebar" class="nav-collapse " modelAttribute="acc" method="post">
+			<div id="sidebar" class="nav-collapse " modelAttribute="acc"
+				method="post">
 				<!-- sidebar menu start-->
 				<ul class="sidebar-menu" id="nav-accordion">
 					<p class="centered">
-						<a href="profile.html"><img th:src="@{|/assets/images/${acc.Photo}|}"
-							class="img-circle" width="80"></a>
+						<a href="profile.html"><img
+							th:src="@{|/assets/images/${acc.Photo}|}" class="img-circle"
+							width="80"></a>
 					</p>
 					<h5 class="centered">Sam Soffes</h5>
 
 					<li class="mt"><a class="active" href="#!product"> <i
 							class="fa fa-th"></i> <span>Quản lý sản phẩm</span>
 					</a></li>
-					
-					<li class="sub-menu"><a href="#!category" > <i
+
+					<li class="sub-menu"><a href="#!category"> <i
 							class="fa fa-list"></i> <span>Quản lý loại sản phẩm</span>
 					</a></li>
 					</li>
-					<li class="sub-menu"><a href="#!trademark" > <i
+					<li class="sub-menu"><a href="#!trademark"> <i
 							class="fa fa-list-ul"></i> <span>Quản lý Thương hiệu</span>
 					</a></li>
-					
+
 					<li class="sub-menu"><a href="#!order"> <i
 							class="fa fa-tasks"></i> <span>Quản lý đơn hàng</span>
 					</a></li>
-					<li class="sub-menu"><a href="#!char"> <i
-							class="fa fa-th"></i> <span>Thống kê Loại sản phẩm</span>
+					<li class="sub-menu"><a href="#!char"> <i class="fa fa-th"></i>
+							<span>Thống kê Loại sản phẩm</span>
 					</a></li>
 
 					<li class="sub-menu"><a href="#!char2"> <i
@@ -89,8 +103,8 @@
 					<li class="sub-menu"><a href="#!char3"> <i
 							class="fa fa-comments-o"></i> <span>Thống kê danh thu </span>
 					</a></li>
-					<li><a href="#!char4"> <i
-							class="fa fa-map-marker"></i> <span>Thống kê khách hàng </span>
+					<li><a href="#!char4"> <i class="fa fa-map-marker"></i> <span>Thống
+								kê khách hàng </span>
 					</a></li>
 					<li class="sub-menu"><a href="#!authorize"> <i
 							class=" fa fa-cogs"></i> <span>Phân quyền</span>
@@ -103,25 +117,26 @@
 			</div>
 		</aside>
 		<section id="main-content">
-			<section class="wrapper ng-view" >
-			</section>
+			<section class="wrapper ng-view"></section>
 		</section>
 
-		
+
 	</section>
-	 <footer class="site-footer">
-            <div class="text-center">
-                <p>
-                    &copy; Bản Quyền thuộc về  <strong>GoalShop</strong>. Đã đăng ký bản quyền
-                </p>
-                <div class="credits">
-                    Được tạo bởi nhóm: <a href="https://www.facebook.com/GoalKilles" target="_blank">GoalKiller</a>
-                </div>
-                <a href="index.html#" class="go-top">
-                    <i class="fa fa-angle-up"></i>
-                </a>
-            </div>
-        </footer>
+	<footer class="site-footer">
+		<div class="text-center">
+			<p>
+				&copy; Bản Quyền thuộc về <strong>GoalShop</strong>. Đã đăng ký bản
+				quyền
+			</p>
+			<div class="credits">
+				Được tạo bởi nhóm: <a href="https://www.facebook.com/GoalKilles"
+					target="_blank">GoalKiller</a>
+			</div>
+			<a href="index.html#" class="go-top"> <i class="fa fa-angle-up"></i>
+			</a>
+		</div>
+	</footer>
+	<script src="/assets/admin/js/dirPagination.js"></script>
 	<script src="/assets/admin/admin-app.js"></script>
 	<script src="/assets/admin/product/product-ctrl.js"></script>
 	<script src="/assets/admin/authority/authority-ctrl.js"></script>
@@ -132,9 +147,9 @@
 	<script src="/assets/admin/account/account-ctrl.js"></script>
 	<script src="/assets/admin/lib/jquery/jquery.min.js"></script>
 	<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 	<script src="/assets/admin/lib/bootstrap/js/bootstrap.min.js"></script>
 	<script class="include" type="text/javascript"
@@ -153,6 +168,7 @@
 	<script src="/assets/admin/lib/zabuto_calendar.js"></script>
 
 	<script type="application/javascript">
+		
 		
         $(document).ready(function() {
             $("#date-popover").popover({
@@ -193,6 +209,7 @@
             console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
         }
     
+	
 	</script>
 </body>
 

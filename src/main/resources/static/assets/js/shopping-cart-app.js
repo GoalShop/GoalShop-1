@@ -91,6 +91,7 @@ app.controller("shopping-cart-ctrl", function($scope, $http) {
             });
         },
         purchase() {
+        	
             var order = angular.copy(this);
             $http.post("/rest/orders", order).then(resp => {
                 alert("dat hang thanh cong");

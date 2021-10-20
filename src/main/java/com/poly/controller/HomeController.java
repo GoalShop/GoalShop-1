@@ -26,7 +26,7 @@ public class HomeController {
 	AccountService accservice;
 	@Autowired
 	AccountDao dao;
-	@RequestMapping("/home/index")
+	@RequestMapping({"/home/index","/"})
 	public String home(Model model) {
 		List<Product> list = pdao.findByAllDis();
 		model.addAttribute("item1", list);

@@ -2,7 +2,8 @@ app.controller("order-ctrl",function($scope , $http){
     $scope.order = [];
     $scope.form = {};
     $scope.odt = [];
-  
+  	$scope.searchKeyword = {}
+     $scope.SearchTerm = '$';
     $scope.initialize = function(){
         //Load order
         $http.get("/rest/orders").then(resp => {

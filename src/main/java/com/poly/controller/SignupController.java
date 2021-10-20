@@ -43,6 +43,7 @@ public class SignupController {
 		else {
 			model.addAttribute("message","Đăng kí không thành công");
 			return "acc/signup";
+			
 		}
 		
 	}

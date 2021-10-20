@@ -32,7 +32,7 @@ public class ReportProductByDayController {
 	@Autowired
 	ReportProductbyDayDao DAO;
 	
-	@RequestMapping("	" )
+	@RequestMapping("char2/index" )
     public String getPieChart(Model model ,@RequestParam(value= "minday" , required = false)@DateTimeFormat(pattern="yyyy-MM-dd") Date minday,
     		@RequestParam(value = "maxday", required = false)@DateTimeFormat(pattern="yyyy-MM-dd") Date maxday) {
     	  try {
