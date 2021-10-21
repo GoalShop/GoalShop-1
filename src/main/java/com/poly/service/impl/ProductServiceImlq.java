@@ -72,7 +72,7 @@ public class ProductServiceImlq implements ProductService {
 	@Override
 	public List<Product> findByKeywords(String keywords) {
 		// TODO Auto-generated method stub
-		return null;
+		return pdao.findByKeywords(keywords);
 	}
 
 	@Override

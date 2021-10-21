@@ -3,16 +3,15 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-4">
 				<div class="main-search mt_40">
-					<form th:action="@{/product/list-by-keywords}" method="post" >
-					<input id="search-input" name="keywords" 
-						placeholder="Tìm kiếm" class="form-control input-lg"
-						autocomplete="off" type="text"> <span
-						class="input-group-btn">
-						<button type="button" class="btn btn-default btn-lg">
-							<i class="fa fa-search"></i>
-						</button>
-					</span>
-</form>
+					<form th:action="@{/product/list/search/1}" method="GET">
+						<input id="search-input" name="keywords" placeholder="Tìm kiếm"
+							class="form-control input-lg" autocomplete="off" type="text">
+						<span class="input-group-btn">
+							<button class="btn btn-default btn-lg">
+								<i class="fa fa-search"></i>
+							</button>
+						</span>
+					</form>
 				</div>
 			</div>
 			<div class="navbar-header col-xs-6 col-sm-4">
@@ -36,16 +35,17 @@
 								<tbody>
 									<tr ng-repeat="item in cart.items">
 										<td class="text-center"><a href="#"><img
-												src="/assets/images/{{item.image1}}" width="70px" height="84px" alt="iPod Classic"
-												title="iPod Classic"></a></td>
+												src="/assets/images/{{item.image1}}" width="70px"
+												height="84px" alt="iPod Classic" title="iPod Classic"></a></td>
 										<td class="text-left product-name"><a href="#">{{item.name}}
-												</a> <span class="text-left price"><strike>${{item.unit_price
+										</a> <span class="text-left price"><strike>${{item.unit_price
 													| number :2}}</strike>:
 												${{item.quantity*item.unit_price-((item.quantity*item.unit_price)*item.distcount/100)
-												| number:2}}</span> <input class="cart-qty" name="product_quantity" ng-change="cart.saveToLocalStorage()"
-												ng-model="item.quantity"
-											min="1" value="1" type="number"></td>
-										<td class="text-center"><a ng-click="cart.remove(item.product_id)" class="close-cart"><i
+												| number:2}}</span> <input class="cart-qty" name="product_quantity"
+											ng-change="cart.saveToLocalStorage()"
+											ng-model="item.quantity" min="1" value="1" type="number"></td>
+										<td class="text-center"><a
+											ng-click="cart.remove(item.product_id)" class="close-cart"><i
 												class="fa fa-times-circle"></i></a></td>
 									</tr>
 
@@ -63,7 +63,7 @@
 										<td class="text-right"><strong>Khuyến mại</strong></td>
 										<td class="text-right">${{cart.amount2 | number:2}}</td>
 									</tr>
-									
+
 									<tr>
 										<td class="text-right"><strong>Còn:</strong></td>
 										<td class="text-right">${{cart.amount | number:2}}</td>
@@ -73,8 +73,9 @@
 						</li>
 						<li><a th:href="@{/cart/view}"> <input
 								class="btn pull-left mt_10" value="Giỏ hàng" type="submit">
-						</a> <a th:href="@{/order/checkout}" action="checkout_page.html"> <input
-								class="btn pull-right mt_10" value="Thanh toán" type="submit">
+						</a> <a th:href="@{/order/checkout}" action="checkout_page.html">
+								<input class="btn pull-right mt_10" value="Thanh toán"
+								type="submit">
 						</a></li>
 					</ul>
 				</div>
