@@ -26,7 +26,7 @@ public class HomeController {
 	AccountService accservice;
 	@Autowired
 	AccountDao dao;
-	@RequestMapping({"/home/index","/"})
+	@RequestMapping("/home/index")
 	public String home(Model model) {
 		List<Product> list = pdao.findByAllDis();
 		model.addAttribute("item1", list);
@@ -37,15 +37,14 @@ public class HomeController {
 		return "home/index";
 	}
 	@RequestMapping({"/admin","/admin/home/index"})
-	public String admin(Model model,@RequestParam("username") String username) {
-		
-		Account acc = accservice.findById(username);
-		model.addAttribute("acc", acc);
+	public String admin() {
 		return "redirect:/assets/admin/index.html";
 	}
 	@RequestMapping({"/admin1","/admin1/home/index"})
-	public String admin1() {
-		return "redirect:/assets/admin1/index.html";
+	public String admin1(Model model, @RequestParam("username") String username) {
+		Account acc = accservice.findById(username);
+		model.addAttribute("acc", acc);
+		return "index";
 	}
 	
 	

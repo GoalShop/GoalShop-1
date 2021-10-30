@@ -30,11 +30,11 @@
 					
 					<li
 						th:if="${#request.isUserInRole('DIRE')}">
-						<a th:href="@{|/admin/home/index?username=${#request.remoteUser}|}">Quản Trị</a>
+						<a th:href="@{/admin}">Quản Trị</a>
 					</li>
 					<li
 						th:if="${ #request.isUserInRole('STAF')}">
-						<a th:href="@{/admin1}">Quản Trị</a>
+						<a th:href="@{|/admin1?username=${#request.remoteUser}|}">Quản Trị</a>
 					</li>
 				</th:block>
 				<th:block th:unless="${#request.remoteUser}">
